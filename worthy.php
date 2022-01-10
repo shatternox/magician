@@ -1,6 +1,10 @@
 <?php
     session_start();
-    session_destroy();
+
+    if(!isset($_SESSION['flag'])){
+        header("Location: index.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +28,8 @@
 body{
     background-color: #080710;
     overflow: hidden;
+    z-index: -90;
+    text-align: center;
 }
 .background{
     width: 430px;
@@ -152,23 +158,44 @@ button{
     left: -100px;
 }
 
+#flag{
+    display: none; 
+    width:20px;
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    z-index: 100;
+    text-align: center;
+    position: absolute;
+}
+
     </style>
 </head>
 <body>
-  
+    <h1 id="flag"><?= $_SESSION['flag'] ?></h1>
     <img src="./images/MAGICIAN.png" alt="" id="img1">
     <img src="./images/MAGICIAN2.png" alt="" id="img2">
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="./controller/handler.php" method="POST">
-        <h3>Are you the true magician? Prove it!</h3>
-        <label for="password">I just need the magic word</label>
-        <input type="text" placeholder="Magic Word" id="magic" name="magic">
-        <button type="submit" name="submit">Submit</button>
+    <form>
+        <h3>Congratulations! You are a worthy magician!</h3>
+        
+        <button type="button" name="submit" id="button">Claim your prize!</button>
+
     </form>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $('#button').click(() => {
+        $('#flag').show(500)
+        $('#flag').css({
+            "display":"block",
+            "position":"relative",
+            "text-align": "center"
+        })
+    })
+</script>
 </html>
 
 <!-- U2guLi4gSSBmb3VuZCB0aGUgbWFnaWNpYW4gY3VsdCBzZWNyZXQgb24gL2NvbnRyb2xsZXIvc2VjcmV0LnBocCwgYnV0IEkgc3RpbGwgZGlkbid0IG1hbmFnZSB0byBnZXQgdGhlIG1hZ2ljIHdvcmQuIFBsZWFzZSBoZWxwIG1lLg== -->

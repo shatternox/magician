@@ -9,7 +9,7 @@
 <body>
     <pre>
         <?php
-            echo "asdsa";
+            show_source("handler.php");
         ?>
     </pre>
 </body>
