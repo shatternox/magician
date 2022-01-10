@@ -18,6 +18,7 @@
 }
 body{
     background-color: #080710;
+    overflow: hidden;
 }
 .background{
     width: 430px;
@@ -132,15 +133,25 @@ button{
   margin-right: 4px;
 }
 
-img{
+#img1{
     float: right;
     text-align: right;
+}
+
+#img2{
+    float: left;
+    text-align: left;
+    width: 600px;
+    bottom: -10px;
+    position: absolute;
+    left: -100px;
 }
 
     </style>
 </head>
 <body>
-    <img src="./images/MAGICIAN.png" alt="">
+    <img src="./images/MAGICIAN.png" alt="" id="img1">
+    <img src="./images/MAGICIAN2.png" alt="" id="img2">
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
