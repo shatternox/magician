@@ -16,7 +16,9 @@
             
             $_SESSION['flag'] = $flag;
 
-            header("Location: ../worthy.php");
+            ?>
+                <script>window.location.href="../worthy.php"</script>
+            <?php
 
         } else {
             die("YOU ARE NOT A MAGICIAN!");
