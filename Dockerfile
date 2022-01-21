@@ -1,6 +1,6 @@
 FROM php:apache
-WORKDIR /var/www/html
+WORKDIR .
 
-COPY . /var/www/html
+COPY . .
 
 expose 80
