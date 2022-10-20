@@ -6,8 +6,6 @@ services:
             - "55124:80"
         volumes:
             - ./web:/var/www/html/:ro
-        links:
-            - db
         networks:
             - default
 volumes:
